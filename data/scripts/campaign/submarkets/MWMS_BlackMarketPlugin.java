@@ -33,16 +33,24 @@ public class MWMS_BlackMarketPlugin extends BlackMarketPlugin {
                 fighters = Math.round((SubmarketShared.FIGHTER_MULT - 1) * fighters);
             }
 
-            addWeapons(weapons, weapons + 2, 3, factionPicker);
-            addFighters(fighters, fighters + 2, 3, factionPicker);
-
             Global.getLogger(this.getClass()).info("Black market WEAPONS: " + weapons + " is this pancake?");
             Global.getLogger(this.getClass()).info("Black market FIGHTERS: " + fighters + " is this pancake?");
-//            for (int x = 1; x < submarketShared.getMinWepMult(); x++){
-//                Global.getLogger(this.getClass()).info("flapjack " + x);
-//                addWeapons(weapons, weapons, 1, market.getFactionId());
-//                addFighters(fighters, fighters, 1, market.getFactionId());
-//            }
+
+            if (SubmarketShared.MANY_PICK == false) {
+                addWeapons(weapons, weapons + 2, 3, factionPicker);
+                addFighters(fighters, fighters + 2, 3, factionPicker);
+            } else {
+                //loop through picks, knowing we pick once in super
+                for (int x = 1; x < SubmarketShared.WEAPON_PICKS; x++){
+                    Global.getLogger(this.getClass()).info("flapjack weapon picks: " + x);
+                    addWeapons(weapons, weapons + 2, 3, factionPicker);
+                }
+                for (int x = 1; x < SubmarketShared.FIGHTER_PICKS; x++){
+                    Global.getLogger(this.getClass()).info("flapjack fighter picks: " + x);
+                    addFighters(fighters, fighters + 2, 3, factionPicker);
+                }
+            }
+//todo add hulls and ships
             getCargo().sort();
         }
         else {
