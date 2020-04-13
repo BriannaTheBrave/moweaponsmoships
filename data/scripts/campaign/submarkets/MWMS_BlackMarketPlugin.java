@@ -24,6 +24,7 @@ public class MWMS_BlackMarketPlugin extends BlackMarketPlugin {
 
             int weapons = 4 + Math.max(0, market.getSize() - 3) + (Misc.isMilitary(market) ? 5 : 0);
             int fighters = 2 + Math.max(0, (market.getSize() - 3) / 2) + (Misc.isMilitary(market) ? 2 : 0);
+            int hullmods = 1 + itemGenRandom.nextInt(3);
 
             if (SubmarketShared.WEAPON_MULT > 1) {
                 weapons = Math.round((SubmarketShared.WEAPON_MULT - 1) * weapons);
@@ -31,6 +32,13 @@ public class MWMS_BlackMarketPlugin extends BlackMarketPlugin {
 
             if (SubmarketShared.FIGHTER_MULT > 1) {
                 fighters = Math.round((SubmarketShared.FIGHTER_MULT - 1) * fighters);
+            }
+
+            //hullmods done all together because they are handled differently
+            if (SubmarketShared.HULLMODS_MULT > 1) {
+                hullmods = Math.round((SubmarketShared.HULLMODS_MULT - 1) * hullmods);
+                if (SubmarketShared.DEBUG) { Global.getLogger(this.getClass()).info("Generic SubMARKET Hullmods: " + hullmods + " is this pancake?");}
+                addHullMods(4, hullmods);
             }
 
             if (SubmarketShared.DEBUG) {
@@ -52,7 +60,7 @@ public class MWMS_BlackMarketPlugin extends BlackMarketPlugin {
                     addFighters(fighters, fighters + 2, 3, factionPicker);
                 }
             }
-//todo add hulls and ships
+//todo add ships
             getCargo().sort();
         }
         else {

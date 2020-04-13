@@ -10,7 +10,7 @@ public class SubmarketShared {
     static final int WEAPON_PICKS = 2;
     static final int FIGHTER_PICKS = 2;
     static final int SHIP_PICKS = 2;
-    static final int HULLMOD_PICKS = 2;
+    //static final int HULLMOD_PICKS = 2; //THIS IS NOT LOGICAL CAPTAIN
     //todo utility to load this from a function
     //todo rounding logic function?
 }

@@ -16,6 +16,7 @@ public class MWMS_MilitarySubmarketPlugin extends MilitarySubmarketPlugin {
 
             int weapons = 4 + Math.max(0, market.getSize() - 3) * 2;
             int fighters = 2 + Math.max(0, market.getSize() - 3);
+            int hullmods = 2 + itemGenRandom.nextInt(4);
 
             if (SubmarketShared.WEAPON_MULT > 1) {
                 weapons = Math.round((SubmarketShared.WEAPON_MULT - 1) * weapons);
@@ -23,6 +24,13 @@ public class MWMS_MilitarySubmarketPlugin extends MilitarySubmarketPlugin {
 
             if (SubmarketShared.FIGHTER_MULT > 1) {
                 fighters = Math.round((SubmarketShared.FIGHTER_MULT - 1) * fighters);
+            }
+
+            //hullmods done all together because they are handled differently
+            if (SubmarketShared.HULLMODS_MULT > 1) {
+                hullmods = Math.round((SubmarketShared.HULLMODS_MULT - 1) * hullmods);
+                if (SubmarketShared.DEBUG) { Global.getLogger(this.getClass()).info("Generic SubMARKET Hullmods: " + hullmods + " is this pancake?");}
+                addHullMods(4, hullmods);
             }
 
             if (SubmarketShared.DEBUG) {
@@ -43,11 +51,6 @@ public class MWMS_MilitarySubmarketPlugin extends MilitarySubmarketPlugin {
                     if (SubmarketShared.DEBUG) {Global.getLogger(this.getClass()).info("flapjack fighter picks: " + x);}
                     addFighters(fighters, fighters + 2, 3, market.getFactionId());
                 }
-                //todo hullmods
-//                for (int x = 1; x < SubmarketShared.WEAPON_PICKS; x++){
-//                    Global.getLogger(this.getClass()).info("flapjack weapon picks: " + x);
-//                    addWeapons(weapons, weapons + 2, 3, submarket.getFaction().getId());
-//                }
                 //todo ships
 //                for (int x = 1; x < SubmarketShared.WEAPON_PICKS; x++){
 //                    Global.getLogger(this.getClass()).info("flapjack weapon picks: " + x);
