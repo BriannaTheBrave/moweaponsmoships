@@ -65,11 +65,11 @@ public class MWMS_OpenMarketPlugin extends OpenMarketPlugin {
                     addWeapons(weapons, weapons + 2, 0, market.getFactionId());
                 }
                 for (int x = 1; x < SubmarketShared.FIGHTER_PICKS; x++){
-                    if (SubmarketShared.DEBUG) {Global.getLogger(this.getClass()).info("flapjack fighter pick x: " + x);}
+                    if (SubmarketShared.DEBUG) {Global.getLogger(this.getClass()).info("MWMS fighter pick x: " + x);}
                     addFighters(fighters, fighters + 2, 0, market.getFactionId());
                 }
                 for (int x = 1; x < SubmarketShared.SHIP_PICKS; x++) {
-                    if (SubmarketShared.DEBUG) {Global.getLogger(this.getClass()).info("flapjack ship pick x: " + x);}
+                    if (SubmarketShared.DEBUG) {Global.getLogger(this.getClass()).info("MWMS ship pick x: " + x);}
                     pickShips(1);
                 }
             }
