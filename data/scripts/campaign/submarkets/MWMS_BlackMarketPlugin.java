@@ -33,8 +33,10 @@ public class MWMS_BlackMarketPlugin extends BlackMarketPlugin {
                 fighters = Math.round((SubmarketShared.FIGHTER_MULT - 1) * fighters);
             }
 
-            Global.getLogger(this.getClass()).info("Black market WEAPONS: " + weapons + " is this pancake?");
-            Global.getLogger(this.getClass()).info("Black market FIGHTERS: " + fighters + " is this pancake?");
+            if (SubmarketShared.DEBUG) {
+                Global.getLogger(this.getClass()).info("Black market WEAPONS: " + weapons + " is this pancake?");
+                Global.getLogger(this.getClass()).info("Black market FIGHTERS: " + fighters + " is this pancake?");
+            }
 
             if (SubmarketShared.MANY_PICK == false) {
                 addWeapons(weapons, weapons + 2, 3, factionPicker);
@@ -42,11 +44,11 @@ public class MWMS_BlackMarketPlugin extends BlackMarketPlugin {
             } else {
                 //loop through picks, knowing we pick once in super
                 for (int x = 1; x < SubmarketShared.WEAPON_PICKS; x++){
-                    Global.getLogger(this.getClass()).info("flapjack weapon picks: " + x);
+                    if (SubmarketShared.DEBUG) {Global.getLogger(this.getClass()).info("flapjack weapon picks: " + x);}
                     addWeapons(weapons, weapons + 2, 3, factionPicker);
                 }
                 for (int x = 1; x < SubmarketShared.FIGHTER_PICKS; x++){
-                    Global.getLogger(this.getClass()).info("flapjack fighter picks: " + x);
+                    if (SubmarketShared.DEBUG) {Global.getLogger(this.getClass()).info("flapjack fighter picks: " + x);}
                     addFighters(fighters, fighters + 2, 3, factionPicker);
                 }
             }

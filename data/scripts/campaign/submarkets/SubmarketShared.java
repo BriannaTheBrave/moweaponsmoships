@@ -1,6 +1,7 @@
 package data.scripts.campaign.submarkets;
 
 public class SubmarketShared {
+    static final boolean DEBUG = true; //false default
     static final float WEAPON_MULT = 2; // todo load from config
     static final float FIGHTER_MULT = 2; //todo load from config
     static final float SHIP_MULT = 2; //todo load from config
