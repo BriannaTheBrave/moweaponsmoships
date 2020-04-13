@@ -2,8 +2,8 @@
 	"id":"MoWeaponsMoShips",
 	"name":"MoWeaponsMoShips",
 	"author":"Brian Deale",
-	"version":"v 0.0.1",
-	"description":"Allows you to multiply the number of ships, fighters, and weapons available in markets",
+	"version":"v 1.0.0van",
+	"description":"Allows you to multiply the number of ships, fighters, hullmods, and weapons available in markets",
 	"gameVersion":"0.9.1a",
 	"jars":["jars/MoWeaponsMoShips.jar"],
 	"modPlugin":"data.scripts.MoWeaponsMoShipsModPlugin"
