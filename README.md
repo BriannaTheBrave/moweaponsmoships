@@ -29,6 +29,10 @@ This mod has to overwrite submarket definitions to work. This was done to avoid 
 This means any mod that adds its own market would need to be included in this mod so it can be overwritten.
 Other modders can contact me at their lesiure to include their submarkets or check in their own custom code for this mod and use its static variables to perform the necessary logic.
 
+This mod also does not perform "perfect math" because of how weapons, ships, and such are "picked" by the game logic. For example a more common item counts as a pick but may have many more items in its stack than say, a rarer item.
+Also note that you may not always see more variety - this is because the picker can pick the same weapon multiple times (by chance) and you just end up with more of them in the stack on the market.
+Also note that even if your multiplier is low (say 1.1) you will still see, by random chance, that small markets may have 2x the normal amount of weapons/ships because of the randomness involved in the selection process.
+
 Details:
 
 So what is this mod doing, why didn't some expert modder do it earlier (IE why didn't this exist before) and how are weapons and ships generated?
