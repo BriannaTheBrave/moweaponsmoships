@@ -3,7 +3,7 @@ This is a mod for StarSector
 https://fractalsoftworks.com/
 
 Check out my mod on the forums:
-https://fractalsoftworks.com/forum/index.php?topic=
+https://fractalsoftworks.com/forum/index.php?topic=18359.0
 
 ## Overview:
 

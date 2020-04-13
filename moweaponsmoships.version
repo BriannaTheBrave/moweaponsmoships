@@ -1,11 +1,11 @@
 {
     "masterVersionFile":"https://raw.githubusercontent.com/KelvallRogers/moweaponsmoships/master/moweaponsmoships.version",
     "modName":"MoWeaponsMoShips",
-    "modThreadId":,
+    "modThreadId":18359,
     "modVersion":
     {
-        "major":0,
+        "major":1,
         "minor":0,
-        "patch":1,
+        "patch":0van,
     }
 }
