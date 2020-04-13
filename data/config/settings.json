@@ -1,0 +1,26 @@
+{
+  # these defaults try to stay as cvlose to vanilla as possible
+  "mwms_debug":false, # this turns on or off debug messages. If you have trouble, set this to true
+  "mwms_many_pick":false, # when set to false, uses multipliers MULT, when set to true will use PICKS
+  #"many_pick": true, will re-iterate the core game's picker giving more total ships of same quality and more crucial weapons garaunteed (like PD, basic Strike, etc)
+
+  # must be 1 or more, can be a decimal like 1.25 or 10.5
+  "mwms_weapon_mult":2,
+  "mwms_fighter_mult":2,
+  "mwms_hullmods_mult":1, defaults to 1, which will cause no change over vanilla
+  "mwms_ship_mult":2, # this is not linear growth - setting to 2 doesn't mean 2 times the number of ships because of the way the game is coded
+  # setting mwms_ship_mult between 1 and 2 will add some weaker ships on top of normal, while going over 2 not only means more ships but bigger, stronger ships too
+  # as an example mwms_ship_mult 1000 means about 60 ships in a large military market but most will be cruiser and above, in addition to what might have spawned there normally
+
+  # all of these must be a whole number (no decimal) of 1 or higher
+  "mwms_weapon_picks":2,
+  "mwms_fighter_picks":2,
+  "mwms_ship_picks":2, # unlike mwms_ship_mult this is closer to a true linear multiplier. It will not affect ship quality, though there is always a chance for more big or small ships.
+  # if you set mwms_ship_picks above 100 expect some performance impact on fleet screen at all markets. Above 1000 will crash most baseline computers - PAY ATTENTION
+
+  # This determines if, when making more ships, it should continue adding extra tankers on top of whatever vanilla does. Does not take away from other ship choices
+  "mwms_extra_tankers":false,
+
+  # Be careful, there is no maximum. 100 weapons won't cause too much system impact, but 100 ships will cause problems on lower end systems for example
+  # I will not protect you from crashing your game by demanding too much memory -- dont go over 1000 especially for picks, seriously lol
+}
