@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: commons-compiler-jdk.jar commons-compiler.jar fs.common_obf.
+ jar fs.sound_obf.jar janino.jar jinput.jar jogg-0.0.7.jar jorbis-0.0.15
+ .jar json.jar log4j-1.2.9.jar lwjgl.jar lwjgl_util.jar starfarer.api.ja
+ r starfarer_obf.jar xstream-1.4.10.jar
+
