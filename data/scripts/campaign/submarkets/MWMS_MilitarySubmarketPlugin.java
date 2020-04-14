@@ -7,6 +7,11 @@ import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.campaign.econ.Submarket;
 import data.scripts.campaign.submarkets.SubmarketShared;
 
+import static data.scripts.campaign.submarkets.SubmarketShared.HAVE_NEXERELIN;
+import exerelin.campaign.AllianceManager;
+import exerelin.campaign.PlayerFactionStore;
+import exerelin.utilities.ExerelinUtilsFaction;
+
 public class MWMS_MilitarySubmarketPlugin extends MilitarySubmarketPlugin {
     @Override
     public void updateCargoPrePlayerInteraction() {
@@ -92,5 +97,22 @@ public class MWMS_MilitarySubmarketPlugin extends MilitarySubmarketPlugin {
                 0f, // qualityMod
                 null,
                 null);
+    }
+
+    //used with permission from Histidine to ensure compatibility
+    @Override
+    protected boolean hasCommission() {
+        if (HAVE_NEXERELIN) {
+            String commissionFaction = ExerelinUtilsFaction.getCommissionFactionId();
+            if (commissionFaction != null && AllianceManager.areFactionsAllied(commissionFaction, submarket.getFaction().getId())) {
+                return true;
+            }
+            if (AllianceManager.areFactionsAllied(PlayerFactionStore.getPlayerFactionId(), submarket.getFaction().getId())) {
+                return true;
+            }
+            return submarket.getFaction().getId().equals(commissionFaction);
+        } else {
+            return super.hasCommission();
+        }
     }
 }
