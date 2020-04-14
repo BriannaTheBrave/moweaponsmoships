@@ -3,6 +3,9 @@ package data.scripts.campaign.submarkets;
 import com.fs.starfarer.api.Global;
 
 public class SubmarketShared {
+    //If we have Nexerelin do its logic for commissions
+    public static boolean HAVE_NEXERELIN = Global.getSettings().getModManager().isModEnabled("nexerelin");;
+
     static final boolean DEBUG = Global.getSettings().getBoolean("mwms_debug");
     static final float WEAPON_MULT = Global.getSettings().getFloat("mwms_weapon_mult");
     static final float FIGHTER_MULT = Global.getSettings().getFloat("mwms_fighter_mult");
